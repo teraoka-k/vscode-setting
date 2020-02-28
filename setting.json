@@ -3,12 +3,41 @@
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": false,
     "window.menuBarVisibility": "hidden",
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": true,
     "editor.minimap.enabled": false,
-    "editor.lineNumbers": "off",
-    "editor.folding": false,
+    "editor.folding": true,
     "editor.glyphMargin": false,
     "update.mode": "none",
-    "zenMode.fullScreen": false,
-    "zenMode.centerLayout": false
+    "zenMode.fullScreen": true,
+    "zenMode.centerLayout": true,
+    "zenMode.hideTabs": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": -1,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.editor.enablePreview": false,
+    "editor.lineNumbers": "off",
+    "vscode_custom_css.imports": ["file:////home/teraoka/Documents/vscode-custome-css/style.css"],
+    "vscode_custom_css.policy": true,
+    "zenMode.restore": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["g", "d"],
+            "commands": [
+                "editor.action.revealDefinition",
+            ]
+        },
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "html.mirrorCursorOnMatchingTag": false,
+    "vim.foldfix": true,
+    "[ejs]": {
+        "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2
+    }
 }
