@@ -25,7 +25,7 @@
         "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "alt+z",
+        "key": "shift+z",
         "command": "workbench.action.toggleZenMode"
     },
     {
