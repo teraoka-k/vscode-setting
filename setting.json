@@ -1,7 +1,11 @@
 {
+    "explorer.confirmDelete": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.colorTheme": "Tomorrow Night Blue",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "hidden",
     "workbench.editor.showTabs": true,
     "editor.minimap.enabled": false,
@@ -11,13 +15,15 @@
     "zenMode.fullScreen": true,
     "zenMode.centerLayout": true,
     "zenMode.hideTabs": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "workbench.editor.enablePreview": false,
     "editor.lineNumbers": "off",
-    "vscode_custom_css.imports": ["file:////home/teraoka/Documents/vscode-custome-css/style.css"],
+    "vscode_custom_css.imports": [
+        "file:////home/teraoka/Documents/vscode-custome-css/style.css",
+        "file:///C:/Users/teraoka/Documents/vscode-custome-css/style.css",
+    ],
     "vscode_custom_css.policy": true,
     "zenMode.restore": true,
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -39,5 +45,6 @@
     },
     "[javascript]": {
         "editor.tabSize": 2
-    }
+    },
+    "workbench.iconTheme": "material-icon-theme"
 }
