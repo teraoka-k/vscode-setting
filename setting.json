@@ -20,11 +20,6 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "workbench.editor.enablePreview": false,
     "editor.lineNumbers": "off",
-    "vscode_custom_css.imports": [
-        "file:////home/teraoka/Documents/vscode-custome-css/style.css",
-        "file:///C:/Users/teraoka/Documents/vscode-custome-css/style.css",
-    ],
-    "vscode_custom_css.policy": true,
     "zenMode.restore": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
