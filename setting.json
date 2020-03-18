@@ -1,98 +1,66 @@
-// Place your key bindings in this file to override the defaultsauto[]
-[ 
-    {  
-       "key": "ctrl+e",          
-        "command": "workbench.action.focusActiveEditorGroup", 
-        "when": "terminalFocus" 
+{
+    "explorer.confirmDelete": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": true,
+    "window.menuBarVisibility": "hidden",
+    "workbench.editor.showTabs": true,
+    "editor.minimap.enabled": false,
+    "editor.folding": true,
+    "editor.glyphMargin": false,
+    "update.mode": "none",
+    "zenMode.fullScreen": true,
+    "zenMode.centerLayout": true,
+    "zenMode.hideTabs": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.restore": true,
+    "window.zoomLevel": -2,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.editor.enablePreview": false,
+    "editor.lineNumbers": "off",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["g", "d"],
+            "commands": [
+                "editor.action.revealDefinition",
+            ]
+        }
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "html.mirrorCursorOnMatchingTag": false,
+    "vim.foldfix": true,
+    "[ejs]": {
+        "editor.tabSize": 2
     },
-    {
-        "key": "ctrl+shift+l",
-        "command": "workbench.action.editor.changeLanguageMode"
+    "[html]": {
+        "editor.tabSize": 2
     },
-    {
-        "key": "ctrl+k m",
-        "command": "-workbench.action.editor.changeLanguageMode"
+    "[javascript]": {
+        "editor.tabSize": 2
     },
-    {
-        "key": "alt+e",
-        "command": "workbench.view.explorer"
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.colorCustomizations": {
+      "terminal.background":"#0b164d",
+      "terminal.foreground":"#A89984",
+      "terminalCursor.background":"#A89984",
+      "terminalCursor.foreground":"#A89984",
+      "terminal.ansiBlack":"#515f64",
+      "terminal.ansiBlue":"#0D6678",
+      "terminal.ansiBrightBlack":"#665C54",
+      "terminal.ansiBrightBlue":"#0D6678",
+      "terminal.ansiBrightCyan":"#8BA59B",
+      "terminal.ansiBrightGreen":"#95C085",
+      "terminal.ansiBrightMagenta":"#8F4673",
+      "terminal.ansiBrightRed":"#FB543F",
+      "terminal.ansiBrightWhite":"#FDF4C1",
+      "terminal.ansiBrightYellow":"#FAC03B",
+      "terminal.ansiCyan":"#8BA59B",
+      "terminal.ansiGreen":"#95C085",
+      "terminal.ansiMagenta":"#8F4673",
+      "terminal.ansiRed":"#FB543F",
+      "terminal.ansiWhite":"#A89984",
+      "terminal.ansiYellow":"#FAC03B"
     },
-    {
-        "key": "ctrl+shift+e",
-        "command": "-workbench.view.explorer"
-    },
-    {
-        "key": "alt+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+b",
-        "command": "-workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+shift+z",
-        "command": "workbench.action.toggleZenMode"
-    },
-    {
-        "key": "ctrl+k z",
-        "command": "-workbench.action.toggleZenMode"
-    },
-    {
-        "key": "alt+h",
-        "command": "editor.action.startFindReplaceAction"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "-editor.action.startFindReplaceAction"
-    },
-    {
-        "key": "ctrl+n",
-        "command": "explorer.newFile"
-    },
-    {
-        "key": "ctrl+shift+n",
-        "command": "explorer.newFolder"
-    },
-    {
-        "key": "ctrl+shift+n",
-        "command": "-workbench.action.newWindow"
-    },
-    {
-        "key": "ctrl+shift+t",
-        "command": "-workbench.action.reopenClosedEditor"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "workbench.action.terminal.split",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.split",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+q",
-        "command": "workbench.action.terminal.kill"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+up",
-        "command": "-workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+down",
-        "command": "-workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    }
-]
+}
