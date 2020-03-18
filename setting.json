@@ -1,7 +1,5 @@
 {
     "explorer.confirmDelete": false,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
@@ -14,19 +12,20 @@
     "zenMode.fullScreen": true,
     "zenMode.centerLayout": true,
     "zenMode.hideTabs": false,
-    "window.zoomLevel": 0,
+    "zenMode.hideStatusBar": false,
+    "zenMode.restore": true,
+    "window.zoomLevel": -2,
     "explorer.confirmDragAndDrop": false,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "workbench.editor.enablePreview": false,
     "editor.lineNumbers": "off",
-    "zenMode.restore": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["g", "d"],
             "commands": [
                 "editor.action.revealDefinition",
             ]
-        },
+        }
     ],
     "typescript.updateImportsOnFileMove.enabled": "always",
     "html.mirrorCursorOnMatchingTag": false,
@@ -63,5 +62,5 @@
       "terminal.ansiRed":"#FB543F",
       "terminal.ansiWhite":"#A89984",
       "terminal.ansiYellow":"#FAC03B"
-    }
+    },
 }
