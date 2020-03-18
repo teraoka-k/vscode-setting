@@ -1,7 +1,12 @@
 // Place your key bindings in this file to override the defaultsauto[]
-[
+[ 
+    {  
+       "key": "ctrl+e",          
+        "command": "workbench.action.focusActiveEditorGroup", 
+        "when": "terminalFocus" 
+    },
     {
-        "key": "ctrl+shift+alt+l",
+        "key": "ctrl+shift+l",
         "command": "workbench.action.editor.changeLanguageMode"
     },
     {
@@ -33,41 +38,6 @@
         "command": "-workbench.action.toggleZenMode"
     },
     {
-        "key": "ctrl+shift+t",
-        "command": "workbench.action.terminal.split",
-        "when": "terminalfocus"
-    },
-    {
-        "key": "ctrl+shift+5",
-        "command": "-workbench.action.terminal.split",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+w l",
-        "command": "workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+down",
-        "command": "-workbench.action.terminal.focusNextPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+w h",
-        "command": "workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+left",
-        "command": "-workbench.action.terminal.focusPreviousPane",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+w q",
-        "command": "workbench.action.terminal.kill",
-        "when": "terminalFocus"
-    },
-    {
         "key": "alt+h",
         "command": "editor.action.startFindReplaceAction"
     },
@@ -90,5 +60,39 @@
     {
         "key": "ctrl+shift+t",
         "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+5",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "-workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
     }
 ]
