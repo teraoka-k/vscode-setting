@@ -1,66 +1,161 @@
 {
-    "explorer.confirmDelete": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true,
-    "window.menuBarVisibility": "hidden",
-    "workbench.editor.showTabs": true,
-    "editor.minimap.enabled": false,
-    "editor.folding": true,
-    "editor.glyphMargin": false,
-    "update.mode": "none",
-    "zenMode.fullScreen": true,
-    "zenMode.centerLayout": true,
-    "zenMode.hideTabs": false,
-    "zenMode.hideStatusBar": false,
-    "zenMode.restore": true,
-    "window.zoomLevel": -2,
-    "explorer.confirmDragAndDrop": false,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "workbench.editor.enablePreview": false,
-    "editor.lineNumbers": "off",
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["g", "d"],
-            "commands": [
-                "editor.action.revealDefinition",
-            ]
-        }
-    ],
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "html.mirrorCursorOnMatchingTag": false,
-    "vim.foldfix": true,
-    "[ejs]": {
-        "editor.tabSize": 2
+  "explorer.confirmDelete": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": true,
+  "window.menuBarVisibility": "hidden",
+  "workbench.editor.showTabs": true,
+  "editor.minimap.enabled": false,
+  "editor.folding": true,
+  "editor.glyphMargin": true,
+  "update.mode": "none",
+  "zenMode.fullScreen": true,
+  "zenMode.centerLayout": true,
+  "zenMode.hideTabs": false,
+  "zenMode.hideStatusBar": false,
+  "zenMode.restore": true,
+  "window.zoomLevel": 1,
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.enablePreview": false,
+  "editor.lineNumbers": "off",
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // macro
+    { "before": ["<leader>", "m"], "commands": ["ssmacro.macro"], "args": {"path": "/home/teraoka/app/macro/macro.json"}},
+
+    // select tab
+    { "before": ["]"], "commands": ["workbench.action.nextEditor"] },
+    { "before": ["["], "commands": ["workbench.action.previousEditor"] },
+    {
+      "before": ["C-["],
+      "commands": ["workbench.action.moveEditorLeftInGroup"]
     },
-    "[html]": {
-        "editor.tabSize": 2
+    {
+      "before": ["C-]"],
+      "commands": ["workbench.action.moveEditorRightInGroup"]
     },
-    "[javascript]": {
-        "editor.tabSize": 2
+    {
+      "before": ["t", "0"],
+      "commands": ["workbench.action.firstEditorInGroup"]
     },
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Tomorrow Night Blue",
-    "workbench.colorCustomizations": {
-      "terminal.background":"#0b164d",
-      "terminal.foreground":"#A89984",
-      "terminalCursor.background":"#A89984",
-      "terminalCursor.foreground":"#A89984",
-      "terminal.ansiBlack":"#515f64",
-      "terminal.ansiBlue":"#0D6678",
-      "terminal.ansiBrightBlack":"#665C54",
-      "terminal.ansiBrightBlue":"#0D6678",
-      "terminal.ansiBrightCyan":"#8BA59B",
-      "terminal.ansiBrightGreen":"#95C085",
-      "terminal.ansiBrightMagenta":"#8F4673",
-      "terminal.ansiBrightRed":"#FB543F",
-      "terminal.ansiBrightWhite":"#FDF4C1",
-      "terminal.ansiBrightYellow":"#FAC03B",
-      "terminal.ansiCyan":"#8BA59B",
-      "terminal.ansiGreen":"#95C085",
-      "terminal.ansiMagenta":"#8F4673",
-      "terminal.ansiRed":"#FB543F",
-      "terminal.ansiWhite":"#A89984",
-      "terminal.ansiYellow":"#FAC03B"
+    {
+      "before": ["t", "t"],
+      "commands": ["workbench.action.firstEditorInGroup"]
     },
+    {
+      "before": ["T"],
+      "commands": ["workbench.action.lastEditorInGroup"]
+    },
+
+    // close tab
+    {
+      "before": ["x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["X"],
+      "commands": ["workbench.action.reopenClosedEditor"]
+    },
+    {
+      "before": ["<C-x>", "<Enter>"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": ["<C-x>", "o"],
+      "commands": [
+        "workbench.action.closeEditorsInOtherGroups",
+        "workbench.action.closeOtherEditors"
+      ]
+    },
+
+    // split windows
+    {
+      "before": ["s", "j"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["s", "k"],
+      "commands": ["workbench.action.splitEditorUp"]
+    },
+    {
+      "before": ["s", "h"],
+      "commands": ["workbench.action.splitEditorLeft"]
+    },
+    {
+      "before": ["s", "l"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // code jump
+    {
+      "before": ["<leader>", ","],
+      "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["<leader>", "."],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+
+    // git diff check
+    { "before": ["<leader>", "t"], "commands": ["timeline.focus"] },
+    {
+      "before": ["<leader>", "T"],
+      "commands": ["timeline.toggleFollowActiveEditor"]
+    },
+
+  "vim.foldfix": true,
+  "vim.easymotion": true,
+  "vim.leader": "<space>",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[ejs]": {
+    "editor.tabSize": 2
+  },
+  "[html]": {
+    "editor.tabSize": 2
+  },
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#122"
+  },
+  "arduino.path": "/home/teraoka/Downloads/arduino-1.8.12",
+  "arduino.commandPath": "arduino",
+  "files.autoGuessEncoding": true,
+  "files.associations": {
+    "*.inc": "vbs",
+    "*.asa": "vbs"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.hover.delay": 0,
+  "editor.quickSuggestionsDelay": 0,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true
 }
