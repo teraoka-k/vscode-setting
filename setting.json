@@ -21,41 +21,39 @@
   "editor.lineNumbers": "off",
 
   "vim.normalModeKeyBindingsNonRecursive": [
-    // macro
-    { "before": ["<leader>", "m"], "commands": ["ssmacro.macro"], "args": {"path": "/home/teraoka/app/macro/macro.json"}},
 
     // select tab
-    { "before": ["]"], "commands": ["workbench.action.nextEditor"] },
-    { "before": ["["], "commands": ["workbench.action.previousEditor"] },
+    { "before": ["]"], "commands": ["workbench.action.nextEditor", "editor.action.showHover"] },
+    { "before": ["["], "commands": ["workbench.action.previousEditor", "editor.action.showHover"] },
     {
       "before": ["C-["],
-      "commands": ["workbench.action.moveEditorLeftInGroup"]
+      "commands": ["workbench.action.moveEditorLeftInGroup", "editor.action.showHover"]
     },
     {
       "before": ["C-]"],
-      "commands": ["workbench.action.moveEditorRightInGroup"]
+      "commands": ["workbench.action.moveEditorRightInGroup", "editor.action.showHover"]
     },
     {
       "before": ["t", "0"],
-      "commands": ["workbench.action.firstEditorInGroup"]
+      "commands": ["workbench.action.firstEditorInGroup", "editor.action.showHover"]
     },
     {
       "before": ["t", "t"],
-      "commands": ["workbench.action.firstEditorInGroup"]
+      "commands": ["workbench.action.firstEditorInGroup", "editor.action.showHover"]
     },
     {
       "before": ["T"],
-      "commands": ["workbench.action.lastEditorInGroup"]
+      "commands": ["workbench.action.lastEditorInGroup", "editor.action.showHover"]
     },
 
     // close tab
     {
       "before": ["x"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "commands": ["workbench.action.closeActiveEditor", "editor.action.showHover"]
     },
     {
       "before": ["X"],
-      "commands": ["workbench.action.reopenClosedEditor"]
+      "commands": ["workbench.action.reopenClosedEditor", "editor.action.showHover"]
     },
     {
       "before": ["<C-x>", "<Enter>"],
@@ -65,7 +63,7 @@
       "before": ["<C-x>", "o"],
       "commands": [
         "workbench.action.closeEditorsInOtherGroups",
-        "workbench.action.closeOtherEditors"
+        "workbench.action.closeOtherEditors", "editor.action.showHover"
       ]
     },
 
@@ -87,38 +85,72 @@
       "commands": ["workbench.action.splitEditorRight"]
     },
     {
+      "before": ["s", "s"],
+      "commands": ["workbench.action.toggleEditorGroupLayout", "workbench.action.focusActiveEditorGroup"]
+    },
+    {
+      "before": ["s", "t"],
+      "commands": ["workbench.action.toggleEditorWidths", "workbench.action.focusActiveEditorGroup"]
+    },
+    {
+      "before": ["s", "r"],
+      "commands": ["workbench.action.evenEditorWidths", "workbench.action.focusActiveEditorGroup"]
+    },
+    {
+      "before": ["s", "J"],
+      "commands": ["workbench.action.increaseViewSize", "workbench.action.focusActiveEditorGroup"]
+    },
+    {
+      "before": ["s", "K"],
+      "commands": ["workbench.action.decreaseViewSize", "workbench.action.focusActiveEditorGroup"]
+    },
+    {
       "before": ["<C-j>"],
-      "commands": ["workbench.action.focusBelowGroup"]
+      "commands": ["workbench.action.focusBelowGroup", "editor.action.showHover"]
     },
     {
       "before": ["<C-k>"],
-      "commands": ["workbench.action.focusAboveGroup"]
+      "commands": ["workbench.action.focusAboveGroup", "editor.action.showHover"]
     },
     {
       "before": ["<C-h>"],
-      "commands": ["workbench.action.focusLeftGroup"]
+      "commands": ["workbench.action.focusLeftGroup", "editor.action.showHover"]
     },
     {
       "before": ["<C-l>"],
-      "commands": ["workbench.action.focusRightGroup"]
+      "commands": ["workbench.action.focusRightGroup", "editor.action.showHover"]
     },
 
     // code jump
     {
       "before": ["<leader>", ","],
-      "commands": ["workbench.action.navigateBack"]
+      "commands": ["workbench.action.navigateBack", "editor.action.showHover"]
     },
     {
       "before": ["<leader>", "."],
-      "commands": ["editor.action.revealDefinition"]
+      "commands": ["editor.action.revealDefinition", "editor.action.showHover"]
     },
     {
       "before": ["<leader>", "d"],
-      "commands": ["editor.action.revealDefinition"]
+      "commands": ["editor.action.peekTypeDefinition", "editor.action.showHover"],
     },
     {
       "before": ["<leader>", "r"],
       "commands": ["editor.action.goToReferences"]
+    },
+
+    // error
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.quickFix"]
     },
 
     // git diff check
@@ -128,6 +160,137 @@
       "commands": ["timeline.toggleFollowActiveEditor"]
     },
 
+    // assign hover event to vim cursor
+    { "before": ["j"], "after": ["j", "g", "h"] },
+    { "before": ["k"], "after": ["k", "g", "h"] },
+    { "before": ["h"], "after": ["h", "g", "h"] },
+    { "before": ["l"], "after": ["l", "g", "h"] },
+    { "before": ["b"], "after": ["b", "g", "h"] },
+    { "before": ["w"], "after": ["w", "g", "h"] },
+    { "before": ["e"], "after": ["e", "g", "h"] },
+    { "before": ["H"], "after": ["H", "g", "h"] },
+    { "before": ["L"], "after": ["L", "g", "h"] },
+
+    // macro
+    // let vimcmd = (str, enters = true) => str.split('').map(JSON.stringify).join(",") + (enters ? ',"<Enter>"' : '');
+    // let vimcmds = (cmds) => cmds.map(c=>vimcmd(c)).join(',');
+
+    {
+      // eli =":%s/(<%)?\\s?ElseIf(.*)Then\\s?(%>)?/<% } else if($2){ -%>/g";
+      // el=":%s/(<%)?\\s?Else\\s?(%>)/<% } else { -%>/g";
+      // eni=":%s/(<%)?\\s?End If\\s?(%>)?/<% } -%>/g";
+      // i=":%s/(<%)?\\s?If(.*)Then\\s?(%>)?/<% if($2){ -%>/g";
+      // t=":%s/True/true/g";
+      // f = ":%s/False/false/g";
+      // or =":%s/ Or / || /g";
+      // and=":%s/ And / && /g";
+      // not=":%s/ Not / ! /g";
+      // neq=":%s/ <> / != /g";
+      // cmds=[eli, el, eni, i, t, f, or, and, not, neq];
+      // vimcmds(cmds);
+      "before": ["<leader>", "l"],
+      "after": [
+        ":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","e","l","s","e"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","\\","s","?","(","%",">",")","/","<","%"," ","}"," ","e","l","s","e"," ","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","n","d"," ","I","f","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","T","r","u","e","/","t","r","u","e","/","g","<Enter>",":","%","s","/","F","a","l","s","e","/","f","a","l","s","e","/","g","<Enter>",":","%","s","/"," ","O","r"," ","/"," ","|","|"," ","/","g","<Enter>",":","%","s","/"," ","A","n","d"," ","/"," ","&","&"," ","/","g","<Enter>",":","%","s","/"," ","N","o","t"," ","/"," ","!"," ","/","g","<Enter>",":","%","s","/"," ","<",">"," ","/"," ","!","="," ","/","g","<Enter>"
+      ]
+    },
+
+    // comment out
+    {
+      // convert vb to js
+      // :%s/^'(.*)/<%# $1 %>/g
+      "before": ["<leader>", "c", "<Enter>"],
+      "after": [
+        ":","%","s","/","^","'","(",".","*",")","/","<","%","#"," ","$","1"," ","%",">","/","g","<Enter>"
+      ]
+    },
+
+    {
+      // comment out include
+      // :%s/<%-/<%#-/g
+      "before": ["<leader>", "c", "i"],
+      "after": [
+        ":","%","s","/","<","%","-","/","<","%","#","-","/","g","<Enter>"
+      ]
+    },
+    {
+      // :%s/<%#-/<%-/g
+      "before": ["<leader>", "c", "c", "i"],
+      "after": [
+        ":","%","s","/","<","%","#","-","/","<","%","-","/","g","<Enter>"
+      ]
+    },
+
+    {
+      // comment out <%=
+      // :%s/<%=/<%#=/g
+      "before": ["<leader>", "c", "e"],
+      "after": [
+        ":","%","s","/","<","%","=","/","<","%","#","=","/","g","<Enter>"
+      ]
+    },
+    {
+      // :%s/<%#=/<%=/g
+      "before": ["<leader>", "c", "c", "e"],
+      "after": [
+        ":","%","s","/","<","%","#","=","/","<","%","=","/","g","<Enter>"
+      ]
+    },
+    {
+      // comment out logic
+      // i=":%s/<% if/<%# if/g"
+      // e=":%s/<% }/<%# }/g"
+      // vimcmds([i,e])
+      "before": ["<leader>", "c", "l"],
+      "after": [
+        ":","%","s","/","<","%"," ","i","f","/","<","%","#"," ","i","f","/","g","<Enter>",":","%","s","/","<","%"," ","}","/","<","%","#"," ","}","/","g","<Enter>"
+      ]
+    },
+    {
+      // i=":%s/<%# if/<% if/g"
+      // e=":%s/<%# }/<% }/g"
+      // vimcmds([i,e])
+      "before": ["<leader>", "c", "c", "l"],
+      "after": [
+        ":","%","s","/","<","%","#"," ","i","f","/","<","%"," ","i","f","/","g","<Enter>",":","%","s","/","<","%","#"," ","}","/","<","%"," ","}","/","g","<Enter>"
+      ]
+    },
+
+    {
+      // :%s/<!--.*include.*="(.*)\\.inc".*-->/<%- include("$1") %>/g
+      "before": ["<leader>", "i"],
+      "after": [
+        ":","%","s","/","<","!","-","-",".","*","i","n","c","l","u","d","e",".","*","=","\"","(",".","*",")","\\",".","i","n","c","\"",".","*","-","-",">","/","<","%","-"," ","i","n","c","l","u","d","e","(","\"","$","1","\"",")"," ","%",">","/","g","<Enter>"
+      ]
+    },
+
+    {
+      // :%s/<%=\\s?Application\\("(\\w*)"\\)/<%= $1 %>/g
+      "before": ["<leader>", "a"],
+      "after": [
+        ":","%","s","/","<","%","=","\\","s","?","A","p","p","l","i","c","a","t","i","o","n","\\","(","\"","(","\\","w","*",")","\"","\\",")","/","<","%","="," ","$","1"," ","%",">","/","g", "<Enter>"
+      ]
+    },
+
+    {
+      // :%s/<%=\\s?Application\\("(\\w*)"\\)/<%= $1 %>/g
+      "before": ["<leader>", "a"],
+      "after": [
+        ":","%","s","/","<","%","=","\\","s","?","A","p","p","l","i","c","a","t","i","o","n","\\","(","\"","(","\\","w","*",")","\"","\\",")","/","<","%","="," ","$","1"," ","%",">","/","g", "<Enter>"
+      ]
+    },
+
+    {
+      // snake_case => camelCase
+      "before": ["<leader>", "s"],
+      "after": ["/", "_", "<Enter>", "x", "g", "U", "l"]
+    },
+
+    {
+      // search <%
+      "before": ["<leader>", "e"],
+      "after": ["/", "<", "%", "<Enter>"]
+    },
+  ],
   "vim.foldfix": true,
   "vim.easymotion": true,
   "vim.leader": "<space>",
@@ -157,5 +320,7 @@
   "editor.quickSuggestionsDelay": 0,
   "files.autoSave": "afterDelay",
   "editor.formatOnType": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.tree.renderIndentGuides": "always",
+  "prettier.embeddedLanguageFormatting": "off"
 }
