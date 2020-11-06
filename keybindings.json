@@ -1,9 +1,21 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
+    "key": "ctrl+t",
+    "command": "workbench.action.tasks.runTask",
+    "args": "dev_node_guide"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.tasks.restartTask",
+    "args": "dev_node_guide"
+  },
+  {
     "key": "ctrl+9",
     "command": "ssmacro.macro",
-    "args": { "path": "/home/teraoka/app/macro/macro.json" }
+    "args": {
+      "path": "/home/teraoka/app/macro/macro.json"
+    }
   },
   {
     "key": "ctrl+e",
@@ -80,7 +92,7 @@
     "command": "workbench.action.terminal.kill"
   },
   {
-    "key": "ctrl+j",
+    "key": "ctrl+h",
     "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
   },
@@ -90,7 +102,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+k",
+    "key": "ctrl+l",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
   },
@@ -131,4 +143,80 @@
     "command": "workbench.action.terminal.resizePaneDown",
     "when": "terminalFocus"
   },
+  {
+    "key": "ctrl+'",
+    "command": "workbench.action.debug.stepOver",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "f10",
+    "command": "-workbench.action.debug.stepOver",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "ctrl+shift+;",
+    "command": "workbench.action.debug.stepOut",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "shift+f11",
+    "command": "-workbench.action.debug.stepOut",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "key": "ctrl+;",
+    "command": "workbench.action.debug.stepInto",
+    "when": "debugState != 'inactive'"
+  },
+  {
+    "key": "f11",
+    "command": "-workbench.action.debug.stepInto",
+    "when": "debugState != 'inactive'"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.debug.continue",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "f5",
+    "command": "-workbench.action.debug.continue",
+    "when": "inDebugMode"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "ctrl+k ctrl+\\",
+    "command": "-workbench.action.splitEditorOrthogonal"
+  },
+  {
+    "key": "alt+v",
+    "command": "workbench.debug.action.focusVariablesView"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new"
+  }
 ]
