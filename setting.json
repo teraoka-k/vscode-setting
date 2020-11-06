@@ -21,6 +21,11 @@
   "editor.lineNumbers": "off",
 
   "vim.normalModeKeyBindingsNonRecursive": [
+    // select tab
+    { "before": ["]"], "commands": ["workbench.action.nextEditor", "editor.action.showHover"] },
+
+    // macro
+    { "before": ["<leader>", "m"], "commands": ["ssmacro.macro"], "args": {"path": "/home/teraoka/app/macro/macro.json"}},
 
     // select tab
     { "before": ["]"], "commands": ["workbench.action.nextEditor", "editor.action.showHover"] },
@@ -153,12 +158,19 @@
       "commands": ["editor.action.quickFix"]
     },
 
-    // git diff check
-    { "before": ["<leader>", "t"], "commands": ["timeline.focus"] },
+    // git
+    { "before": ["<leader>","g", "p", "l"], "commands": ["git.pull"] },
+    { "before": ["<leader>", "g", "p", "s"], "commands": ["git.push"] },
+    { "before": ["<leader>","g", "s"], "commands": ["git.checkout"] },
+    { "before": ["leader>", "t"], "commands": ["timeline.focus"] },
     {
       "before": ["<leader>", "T"],
       "commands": ["timeline.toggleFollowActiveEditor"]
     },
+
+    // debug
+    { "before": ["<leader>", "b"], "commands": ["editor.debug.action.toggleBreakpoint"] },
+    { "before": ["<leader>", "<C-b>"], "commands": ["editor.debug.action.conditionalBreakpoint"] },
 
     // assign hover event to vim cursor
     { "before": ["j"], "after": ["j", "g", "h"] },
@@ -166,10 +178,16 @@
     { "before": ["h"], "after": ["h", "g", "h"] },
     { "before": ["l"], "after": ["l", "g", "h"] },
     { "before": ["b"], "after": ["b", "g", "h"] },
+    { "before": ["B"], "after": ["B", "g", "h"] },
     { "before": ["w"], "after": ["w", "g", "h"] },
+    { "before": ["W"], "after": ["W", "g", "h"] },
     { "before": ["e"], "after": ["e", "g", "h"] },
+    { "before": ["E"], "after": ["E", "g", "h"] },
     { "before": ["H"], "after": ["H", "g", "h"] },
     { "before": ["L"], "after": ["L", "g", "h"] },
+    { "before": ["M"], "after": ["M", "g", "h"] },
+    { "before": ["0"], "after": ["0", "g", "h"] },
+    { "before": ["$"], "after": ["$", "g", "h"] },
 
     // macro
     // let vimcmd = (str, enters = true) => str.split('').map(JSON.stringify).join(",") + (enters ? ',"<Enter>"' : '');
@@ -177,7 +195,7 @@
 
     {
       // eli =":%s/(<%)?\\s?ElseIf(.*)Then\\s?(%>)?/<% } else if($2){ -%>/g";
-      // el=":%s/(<%)?\\s?Else\\s?(%>)/<% } else { -%>/g";
+      // el=":%s/(<%)?\\s?Else\\s?(%>)?/<% } else { -%>/g";
       // eni=":%s/(<%)?\\s?End If\\s?(%>)?/<% } -%>/g";
       // i=":%s/(<%)?\\s?If(.*)Then\\s?(%>)?/<% if($2){ -%>/g";
       // t=":%s/True/true/g";
@@ -190,17 +208,17 @@
       // vimcmds(cmds);
       "before": ["<leader>", "l"],
       "after": [
-        ":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","e","l","s","e"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","\\","s","?","(","%",">",")","/","<","%"," ","}"," ","e","l","s","e"," ","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","n","d"," ","I","f","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","T","r","u","e","/","t","r","u","e","/","g","<Enter>",":","%","s","/","F","a","l","s","e","/","f","a","l","s","e","/","g","<Enter>",":","%","s","/"," ","O","r"," ","/"," ","|","|"," ","/","g","<Enter>",":","%","s","/"," ","A","n","d"," ","/"," ","&","&"," ","/","g","<Enter>",":","%","s","/"," ","N","o","t"," ","/"," ","!"," ","/","g","<Enter>",":","%","s","/"," ","<",">"," ","/"," ","!","="," ","/","g","<Enter>"
+        ":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","e","l","s","e"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","e","l","s","e"," ","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","n","d"," ","I","f","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","T","r","u","e","/","t","r","u","e","/","g","<Enter>",":","%","s","/","F","a","l","s","e","/","f","a","l","s","e","/","g","<Enter>",":","%","s","/"," ","O","r"," ","/"," ","|","|"," ","/","g","<Enter>",":","%","s","/"," ","A","n","d"," ","/"," ","&","&"," ","/","g","<Enter>",":","%","s","/"," ","N","o","t"," ","/"," ","!"," ","/","g","<Enter>",":","%","s","/"," ","<",">"," ","/"," ","!","="," ","/","g","<Enter>"
       ]
     },
 
     // comment out
     {
       // convert vb to js
-      // :%s/^'(.*)/<%# $1 %>/g
+      // :%s/\\s'(.*)$/<%#$1%>/g
       "before": ["<leader>", "c", "<Enter>"],
       "after": [
-        ":","%","s","/","^","'","(",".","*",")","/","<","%","#"," ","$","1"," ","%",">","/","g","<Enter>"
+        ":","%","s","/","\\","s","'","(",".","*",")","$","/","<","%","#","$","1","%",">","/","g","<Enter>"
       ]
     },
 
@@ -272,14 +290,6 @@
     },
 
     {
-      // :%s/<%=\\s?Application\\("(\\w*)"\\)/<%= $1 %>/g
-      "before": ["<leader>", "a"],
-      "after": [
-        ":","%","s","/","<","%","=","\\","s","?","A","p","p","l","i","c","a","t","i","o","n","\\","(","\"","(","\\","w","*",")","\"","\\",")","/","<","%","="," ","$","1"," ","%",">","/","g", "<Enter>"
-      ]
-    },
-
-    {
       // snake_case => camelCase
       "before": ["<leader>", "s"],
       "after": ["/", "_", "<Enter>", "x", "g", "U", "l"]
@@ -291,22 +301,16 @@
       "after": ["/", "<", "%", "<Enter>"]
     },
   ],
+
   "vim.foldfix": true,
   "vim.easymotion": true,
   "vim.leader": "<space>",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "[ejs]": {
-    "editor.tabSize": 2
-  },
-  "[html]": {
-    "editor.tabSize": 2
-  },
-  "[javascript]": {
-    "editor.tabSize": 2
-  },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#122"
+    "statusBar.background": "#16dada",
+    "editorWarning.foreground": "#59b4ff",
+    "editorError.foreground": "#ffe659",
   },
   "arduino.path": "/home/teraoka/Downloads/arduino-1.8.12",
   "arduino.commandPath": "arduino",
@@ -319,8 +323,30 @@
   "editor.hover.delay": 0,
   "editor.quickSuggestionsDelay": 0,
   "files.autoSave": "afterDelay",
-  "editor.formatOnType": true,
-  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "workbench.tree.renderIndentGuides": "always",
-  "prettier.embeddedLanguageFormatting": "off"
+  "prettier.embeddedLanguageFormatting": "off",
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.intelliSenseUpdateDelay": 500,
+  "debug.onTaskErrors": "showErrors",
+  "task.problemMatchers.neverPrompt": {
+    "shell": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
 }
