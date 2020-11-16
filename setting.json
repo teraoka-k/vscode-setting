@@ -19,46 +19,36 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.enablePreview": false,
   "editor.lineNumbers": "off",
-
+  
   "vim.normalModeKeyBindingsNonRecursive": [
-    // select tab
-    { "before": ["]"], "commands": ["workbench.action.nextEditor", "editor.action.showHover"] },
-
-    // macro
-    { "before": ["<leader>", "m"], "commands": ["ssmacro.macro"], "args": {"path": "/home/teraoka/app/macro/macro.json"}},
-
-    // select tab
-    { "before": ["]"], "commands": ["workbench.action.nextEditor", "editor.action.showHover"] },
-    { "before": ["["], "commands": ["workbench.action.previousEditor", "editor.action.showHover"] },
+    // tab
+    { "before": ["]"], "commands": ["workbench.action.nextEditor"] },
+    { "before": ["["], "commands": ["workbench.action.previousEditor"] },
     {
       "before": ["C-["],
-      "commands": ["workbench.action.moveEditorLeftInGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.moveEditorLeftInGroup"]
     },
     {
       "before": ["C-]"],
-      "commands": ["workbench.action.moveEditorRightInGroup", "editor.action.showHover"]
-    },
-    {
-      "before": ["t", "0"],
-      "commands": ["workbench.action.firstEditorInGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.moveEditorRightInGroup"]
     },
     {
       "before": ["t", "t"],
-      "commands": ["workbench.action.firstEditorInGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.firstEditorInGroup"]
     },
     {
       "before": ["T"],
-      "commands": ["workbench.action.lastEditorInGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.lastEditorInGroup"]
     },
-
+    
     // close tab
     {
       "before": ["x"],
-      "commands": ["workbench.action.closeActiveEditor", "editor.action.showHover"]
+      "commands": ["workbench.action.closeActiveEditor"]
     },
     {
       "before": ["X"],
-      "commands": ["workbench.action.reopenClosedEditor", "editor.action.showHover"]
+      "commands": ["workbench.action.reopenClosedEditor"]
     },
     {
       "before": ["<C-x>", "<Enter>"],
@@ -68,10 +58,10 @@
       "before": ["<C-x>", "o"],
       "commands": [
         "workbench.action.closeEditorsInOtherGroups",
-        "workbench.action.closeOtherEditors", "editor.action.showHover"
+        "workbench.action.closeOtherEditors"
       ]
     },
-
+    
     // split windows
     {
       "before": ["s", "j"],
@@ -111,39 +101,39 @@
     },
     {
       "before": ["<C-j>"],
-      "commands": ["workbench.action.focusBelowGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.focusBelowGroup"]
     },
     {
       "before": ["<C-k>"],
-      "commands": ["workbench.action.focusAboveGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.focusAboveGroup"]
     },
     {
       "before": ["<C-h>"],
-      "commands": ["workbench.action.focusLeftGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.focusLeftGroup"]
     },
     {
       "before": ["<C-l>"],
-      "commands": ["workbench.action.focusRightGroup", "editor.action.showHover"]
+      "commands": ["workbench.action.focusRightGroup"]
     },
-
+    
     // code jump
     {
       "before": ["<leader>", ","],
-      "commands": ["workbench.action.navigateBack", "editor.action.showHover"]
+      "commands": ["workbench.action.navigateBack"]
     },
     {
       "before": ["<leader>", "."],
-      "commands": ["editor.action.revealDefinition", "editor.action.showHover"]
+      "commands": ["editor.action.revealDefinition"]
     },
     {
       "before": ["<leader>", "d"],
-      "commands": ["editor.action.peekTypeDefinition", "editor.action.showHover"],
+      "commands": ["editor.action.peekTypeDefinition"],
     },
     {
       "before": ["<leader>", "r"],
       "commands": ["editor.action.goToReferences"]
     },
-
+    
     // error
     {
       "before": ["<leader>", "n"],
@@ -157,151 +147,48 @@
       "before": ["<leader>", "f"],
       "commands": ["editor.action.quickFix"]
     },
-
+    
     // git
-    { "before": ["<leader>","g", "p", "l"], "commands": ["git.pull"] },
-    { "before": ["<leader>", "g", "p", "s"], "commands": ["git.push"] },
-    { "before": ["<leader>","g", "s"], "commands": ["git.checkout"] },
-    { "before": ["leader>", "t"], "commands": ["timeline.focus"] },
+    { "before": ["<leader>", "t"], "commands": ["timeline.focus"] },
     {
       "before": ["<leader>", "T"],
       "commands": ["timeline.toggleFollowActiveEditor"]
     },
-
+    
     // debug
     { "before": ["<leader>", "b"], "commands": ["editor.debug.action.toggleBreakpoint"] },
     { "before": ["<leader>", "<C-b>"], "commands": ["editor.debug.action.conditionalBreakpoint"] },
-
+    
     // assign hover event to vim cursor
-    { "before": ["j"], "after": ["j", "g", "h"] },
-    { "before": ["k"], "after": ["k", "g", "h"] },
-    { "before": ["h"], "after": ["h", "g", "h"] },
-    { "before": ["l"], "after": ["l", "g", "h"] },
-    { "before": ["b"], "after": ["b", "g", "h"] },
-    { "before": ["B"], "after": ["B", "g", "h"] },
-    { "before": ["w"], "after": ["w", "g", "h"] },
-    { "before": ["W"], "after": ["W", "g", "h"] },
-    { "before": ["e"], "after": ["e", "g", "h"] },
-    { "before": ["E"], "after": ["E", "g", "h"] },
-    { "before": ["H"], "after": ["H", "g", "h"] },
-    { "before": ["L"], "after": ["L", "g", "h"] },
-    { "before": ["M"], "after": ["M", "g", "h"] },
-    { "before": ["0"], "after": ["0", "g", "h"] },
-    { "before": ["$"], "after": ["$", "g", "h"] },
-
+    // { "before": ["j"], "after": ["j", "g", "h"] },
+    // { "before": ["k"], "after": ["k", "g", "h"] },
+    // { "before": ["h"], "after": ["h", "g", "h"] },
+    // { "before": ["l"], "after": ["l", "g", "h"] },
+    // { "before": ["b"], "after": ["b", "g", "h"] },
+    // { "before": ["B"], "after": ["B", "g", "h"] },
+    // { "before": ["w"], "after": ["w", "g", "h"] },
+    // { "before": ["W"], "after": ["W", "g", "h"] },
+    // { "before": ["e"], "after": ["e", "g", "h"] },
+    // { "before": ["E"], "after": ["E", "g", "h"] },
+    // { "before": ["H"], "after": ["H", "g", "h"] },
+    // { "before": ["L"], "after": ["L", "g", "h"] },
+    // { "before": ["M"], "after": ["M", "g", "h"] },
+    // { "before": ["0"], "after": ["0", "g", "h"] },
+    // { "before": ["$"], "after": ["$", "g", "h"] },
+    
     // macro
     // let vimcmd = (str, enters = true) => str.split('').map(JSON.stringify).join(",") + (enters ? ',"<Enter>"' : '');
     // let vimcmds = (cmds) => cmds.map(c=>vimcmd(c)).join(',');
-
-    {
-      // eli =":%s/(<%)?\\s?ElseIf(.*)Then\\s?(%>)?/<% } else if($2){ -%>/g";
-      // el=":%s/(<%)?\\s?Else\\s?(%>)?/<% } else { -%>/g";
-      // eni=":%s/(<%)?\\s?End If\\s?(%>)?/<% } -%>/g";
-      // i=":%s/(<%)?\\s?If(.*)Then\\s?(%>)?/<% if($2){ -%>/g";
-      // t=":%s/True/true/g";
-      // f = ":%s/False/false/g";
-      // or =":%s/ Or / || /g";
-      // and=":%s/ And / && /g";
-      // not=":%s/ Not / ! /g";
-      // neq=":%s/ <> / != /g";
-      // cmds=[eli, el, eni, i, t, f, or, and, not, neq];
-      // vimcmds(cmds);
-      "before": ["<leader>", "l"],
-      "after": [
-        ":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","e","l","s","e"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","l","s","e","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","e","l","s","e"," ","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","E","n","d"," ","I","f","\\","s","?","(","%",">",")","?","/","<","%"," ","}"," ","-","%",">","/","g","<Enter>",":","%","s","/","(","<","%",")","?","\\","s","?","I","f","(",".","*",")","T","h","e","n","\\","s","?","(","%",">",")","?","/","<","%"," ","i","f","(","$","2",")","{"," ","-","%",">","/","g","<Enter>",":","%","s","/","T","r","u","e","/","t","r","u","e","/","g","<Enter>",":","%","s","/","F","a","l","s","e","/","f","a","l","s","e","/","g","<Enter>",":","%","s","/"," ","O","r"," ","/"," ","|","|"," ","/","g","<Enter>",":","%","s","/"," ","A","n","d"," ","/"," ","&","&"," ","/","g","<Enter>",":","%","s","/"," ","N","o","t"," ","/"," ","!"," ","/","g","<Enter>",":","%","s","/"," ","<",">"," ","/"," ","!","="," ","/","g","<Enter>"
-      ]
-    },
-
+    
     // comment out
-    {
-      // convert vb to js
-      // :%s/\\s'(.*)$/<%#$1%>/g
-      "before": ["<leader>", "c", "<Enter>"],
-      "after": [
-        ":","%","s","/","\\","s","'","(",".","*",")","$","/","<","%","#","$","1","%",">","/","g","<Enter>"
-      ]
-    },
-
-    {
-      // comment out include
-      // :%s/<%-/<%#-/g
-      "before": ["<leader>", "c", "i"],
-      "after": [
-        ":","%","s","/","<","%","-","/","<","%","#","-","/","g","<Enter>"
-      ]
-    },
-    {
-      // :%s/<%#-/<%-/g
-      "before": ["<leader>", "c", "c", "i"],
-      "after": [
-        ":","%","s","/","<","%","#","-","/","<","%","-","/","g","<Enter>"
-      ]
-    },
-
-    {
-      // comment out <%=
-      // :%s/<%=/<%#=/g
-      "before": ["<leader>", "c", "e"],
-      "after": [
-        ":","%","s","/","<","%","=","/","<","%","#","=","/","g","<Enter>"
-      ]
-    },
-    {
-      // :%s/<%#=/<%=/g
-      "before": ["<leader>", "c", "c", "e"],
-      "after": [
-        ":","%","s","/","<","%","#","=","/","<","%","=","/","g","<Enter>"
-      ]
-    },
-    {
-      // comment out logic
-      // i=":%s/<% if/<%# if/g"
-      // e=":%s/<% }/<%# }/g"
-      // vimcmds([i,e])
-      "before": ["<leader>", "c", "l"],
-      "after": [
-        ":","%","s","/","<","%"," ","i","f","/","<","%","#"," ","i","f","/","g","<Enter>",":","%","s","/","<","%"," ","}","/","<","%","#"," ","}","/","g","<Enter>"
-      ]
-    },
-    {
-      // i=":%s/<%# if/<% if/g"
-      // e=":%s/<%# }/<% }/g"
-      // vimcmds([i,e])
-      "before": ["<leader>", "c", "c", "l"],
-      "after": [
-        ":","%","s","/","<","%","#"," ","i","f","/","<","%"," ","i","f","/","g","<Enter>",":","%","s","/","<","%","#"," ","}","/","<","%"," ","}","/","g","<Enter>"
-      ]
-    },
-
-    {
-      // :%s/<!--.*include.*="(.*)\\.inc".*-->/<%- include("$1") %>/g
-      "before": ["<leader>", "i"],
-      "after": [
-        ":","%","s","/","<","!","-","-",".","*","i","n","c","l","u","d","e",".","*","=","\"","(",".","*",")","\\",".","i","n","c","\"",".","*","-","-",">","/","<","%","-"," ","i","n","c","l","u","d","e","(","\"","$","1","\"",")"," ","%",">","/","g","<Enter>"
-      ]
-    },
-
-    {
-      // :%s/<%=\\s?Application\\("(\\w*)"\\)/<%= $1 %>/g
-      "before": ["<leader>", "a"],
-      "after": [
-        ":","%","s","/","<","%","=","\\","s","?","A","p","p","l","i","c","a","t","i","o","n","\\","(","\"","(","\\","w","*",")","\"","\\",")","/","<","%","="," ","$","1"," ","%",">","/","g", "<Enter>"
-      ]
-    },
-
     {
       // snake_case => camelCase
       "before": ["<leader>", "s"],
       "after": ["/", "_", "<Enter>", "x", "g", "U", "l"]
     },
-
-    {
-      // search <%
-      "before": ["<leader>", "e"],
-      "after": ["/", "<", "%", "<Enter>"]
-    },
+    
   ],
-
+  
   "vim.foldfix": true,
   "vim.easymotion": true,
   "vim.leader": "<space>",
@@ -315,24 +202,11 @@
   "arduino.path": "/home/teraoka/Downloads/arduino-1.8.12",
   "arduino.commandPath": "arduino",
   "files.autoGuessEncoding": true,
-  "files.associations": {
-    "*.inc": "vbs",
-    "*.asa": "vbs"
-  },
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.hover.delay": 0,
   "editor.quickSuggestionsDelay": 0,
   "files.autoSave": "afterDelay",
   "eslint.format.enable": true,
-  "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "workbench.tree.renderIndentGuides": "always",
   "prettier.embeddedLanguageFormatting": "off",
   "C_Cpp.updateChannel": "Insiders",
@@ -343,10 +217,24 @@
   },
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust"
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "[typescriptreact]": {
+  "[json]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  },
+  "extensions.ignoreRecommendations": false,
+  "debug.allowBreakpointsEverywhere": true,
 }
