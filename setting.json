@@ -19,176 +19,347 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.enablePreview": false,
   "editor.lineNumbers": "off",
-  
   "vim.normalModeKeyBindingsNonRecursive": [
     // tab
-    { "before": ["]"], "commands": ["workbench.action.nextEditor"] },
-    { "before": ["["], "commands": ["workbench.action.previousEditor"] },
     {
-      "before": ["C-["],
-      "commands": ["workbench.action.moveEditorLeftInGroup"]
+      "before": [
+        "]"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
     },
     {
-      "before": ["C-]"],
-      "commands": ["workbench.action.moveEditorRightInGroup"]
+      "before": [
+        "["
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
     },
     {
-      "before": ["t", "t"],
-      "commands": ["workbench.action.firstEditorInGroup"]
+      "before": [
+        "C-["
+      ],
+      "commands": [
+        "workbench.action.moveEditorLeftInGroup"
+      ]
     },
     {
-      "before": ["T"],
-      "commands": ["workbench.action.lastEditorInGroup"]
+      "before": [
+        "C-]"
+      ],
+      "commands": [
+        "workbench.action.moveEditorRightInGroup"
+      ]
     },
-    
+    {
+      "before": [
+        "t",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.firstEditorInGroup"
+      ]
+    },
+    {
+      "before": [
+        "T"
+      ],
+      "commands": [
+        "workbench.action.lastEditorInGroup"
+      ]
+    },
     // close tab
     {
-      "before": ["x"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "before": [
+        "x"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
     },
     {
-      "before": ["X"],
-      "commands": ["workbench.action.reopenClosedEditor"]
+      "before": [
+        "X"
+      ],
+      "commands": [
+        "workbench.action.reopenClosedEditor"
+      ]
     },
     {
-      "before": ["<C-x>", "<Enter>"],
-      "commands": ["workbench.action.closeAllEditors"]
+      "before": [
+        "<C-x>",
+        "<Enter>"
+      ],
+      "commands": [
+        "workbench.action.closeAllEditors"
+      ]
     },
     {
-      "before": ["<C-x>", "o"],
+      "before": [
+        "<C-x>",
+        "o"
+      ],
       "commands": [
         "workbench.action.closeEditorsInOtherGroups",
         "workbench.action.closeOtherEditors"
       ]
     },
-    
     // split windows
     {
-      "before": ["s", "j"],
-      "commands": ["workbench.action.splitEditorDown"]
+      "before": [
+        "s",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
     },
     {
-      "before": ["s", "k"],
-      "commands": ["workbench.action.splitEditorUp"]
+      "before": [
+        "s",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.splitEditorUp"
+      ]
     },
     {
-      "before": ["s", "h"],
-      "commands": ["workbench.action.splitEditorLeft"]
+      "before": [
+        "s",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.splitEditorLeft"
+      ]
     },
     {
-      "before": ["s", "l"],
-      "commands": ["workbench.action.splitEditorRight"]
+      "before": [
+        "s",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.splitEditorRight"
+      ]
     },
     {
-      "before": ["s", "s"],
-      "commands": ["workbench.action.toggleEditorGroupLayout", "workbench.action.focusActiveEditorGroup"]
+      "before": [
+        "s",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.toggleEditorGroupLayout",
+        "workbench.action.focusActiveEditorGroup"
+      ]
     },
     {
-      "before": ["s", "t"],
-      "commands": ["workbench.action.toggleEditorWidths", "workbench.action.focusActiveEditorGroup"]
+      "before": [
+        "s",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.toggleEditorWidths",
+        "workbench.action.focusActiveEditorGroup"
+      ]
     },
     {
-      "before": ["s", "r"],
-      "commands": ["workbench.action.evenEditorWidths", "workbench.action.focusActiveEditorGroup"]
+      "before": [
+        "s",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.evenEditorWidths",
+        "workbench.action.focusActiveEditorGroup"
+      ]
     },
     {
-      "before": ["s", "J"],
-      "commands": ["workbench.action.increaseViewSize", "workbench.action.focusActiveEditorGroup"]
+      "before": [
+        "s",
+        "J"
+      ],
+      "commands": [
+        "workbench.action.increaseViewSize",
+        "workbench.action.focusActiveEditorGroup"
+      ]
     },
     {
-      "before": ["s", "K"],
-      "commands": ["workbench.action.decreaseViewSize", "workbench.action.focusActiveEditorGroup"]
+      "before": [
+        "s",
+        "K"
+      ],
+      "commands": [
+        "workbench.action.decreaseViewSize",
+        "workbench.action.focusActiveEditorGroup"
+      ]
     },
     {
-      "before": ["<C-j>"],
-      "commands": ["workbench.action.focusBelowGroup"]
+      "before": [
+        "<C-j>"
+      ],
+      "commands": [
+        "workbench.action.focusBelowGroup"
+      ]
     },
     {
-      "before": ["<C-k>"],
-      "commands": ["workbench.action.focusAboveGroup"]
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
+      ]
     },
     {
-      "before": ["<C-h>"],
-      "commands": ["workbench.action.focusLeftGroup"]
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.focusLeftGroup"
+      ]
     },
     {
-      "before": ["<C-l>"],
-      "commands": ["workbench.action.focusRightGroup"]
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.focusRightGroup"
+      ]
     },
-    
     // code jump
     {
-      "before": ["<leader>", ","],
-      "commands": ["workbench.action.navigateBack"]
+      "before": [
+        "<leader>",
+        ","
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ]
     },
     {
-      "before": ["<leader>", "."],
-      "commands": ["editor.action.revealDefinition"]
+      "before": [
+        "<leader>",
+        "."
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
     },
     {
-      "before": ["<leader>", "d"],
-      "commands": ["editor.action.peekTypeDefinition"],
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "commands": [
+        "editor.action.peekTypeDefinition"
+      ],
     },
     {
-      "before": ["<leader>", "r"],
-      "commands": ["editor.action.goToReferences"]
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
     },
-    
     // error
     {
-      "before": ["<leader>", "n"],
-      "commands": ["editor.action.marker.nextInFiles"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "editor.action.marker.nextInFiles"
+      ]
     },
     {
-      "before": ["<leader>", "p"],
-      "commands": ["editor.action.marker.prevInFiles"]
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "commands": [
+        "editor.action.marker.prevInFiles"
+      ]
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.action.quickFix"]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
     },
-    
     // git
-    { "before": ["<leader>", "t"], "commands": ["timeline.focus"] },
     {
-      "before": ["<leader>", "T"],
-      "commands": ["timeline.toggleFollowActiveEditor"]
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "timeline.focus"
+      ]
     },
-    
+    {
+      "before": [
+        "<leader>",
+        "T"
+      ],
+      "commands": [
+        "timeline.toggleFollowActiveEditor"
+      ]
+    },
     // debug
-    { "before": ["<leader>", "b"], "commands": ["editor.debug.action.toggleBreakpoint"] },
-    { "before": ["<leader>", "<C-b>"], "commands": ["editor.debug.action.conditionalBreakpoint"] },
-    
-    // assign hover event to vim cursor
-    // { "before": ["j"], "after": ["j", "g", "h"] },
-    // { "before": ["k"], "after": ["k", "g", "h"] },
-    // { "before": ["h"], "after": ["h", "g", "h"] },
-    // { "before": ["l"], "after": ["l", "g", "h"] },
-    // { "before": ["b"], "after": ["b", "g", "h"] },
-    // { "before": ["B"], "after": ["B", "g", "h"] },
-    // { "before": ["w"], "after": ["w", "g", "h"] },
-    // { "before": ["W"], "after": ["W", "g", "h"] },
-    // { "before": ["e"], "after": ["e", "g", "h"] },
-    // { "before": ["E"], "after": ["E", "g", "h"] },
-    // { "before": ["H"], "after": ["H", "g", "h"] },
-    // { "before": ["L"], "after": ["L", "g", "h"] },
-    // { "before": ["M"], "after": ["M", "g", "h"] },
-    // { "before": ["0"], "after": ["0", "g", "h"] },
-    // { "before": ["$"], "after": ["$", "g", "h"] },
-    
+    {
+      "before": [
+        "<leader>",
+        "b"
+      ],
+      "commands": [
+        "editor.debug.action.toggleBreakpoint"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "<C-b>"
+      ],
+      "commands": [
+        "editor.debug.action.conditionalBreakpoint"
+      ]
+    },
     // macro
     // let vimcmd = (str, enters = true) => str.split('').map(JSON.stringify).join(",") + (enters ? ',"<Enter>"' : '');
     // let vimcmds = (cmds) => cmds.map(c=>vimcmd(c)).join(',');
-    
+    // snake_case => camelCase
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "after": [
+        "/",
+        "_",
+        "<Enter>",
+        "x",
+        "g",
+        "U",
+        "l"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
     // comment out
     {
-      // snake_case => camelCase
-      "before": ["<leader>", "s"],
-      "after": ["/", "_", "<Enter>", "x", "g", "U", "l"]
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "commands": [
+        "editor.action.blockComment"
+      ]
     },
-    
   ],
-  
   "vim.foldfix": true,
   "vim.easymotion": true,
   "vim.leader": "<space>",
