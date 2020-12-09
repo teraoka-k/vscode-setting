@@ -1,0 +1,5 @@
+{
+	"extensions": {
+		"recommendations": ["ms-vscode.cpptools", "streetsidesoftware.code-spell-checker", "ms-azuretools.vscode-docker", "dbaeumer.vscode-eslint", "ritwickdey.liveserver", "pkief.material-icon-theme", "asvetliakov.vscode-neovim", "rust-lang.rust", "matklad.rust-analyzer", "stylelint.vscode-stylelint"]
+	}
+}
