@@ -62,9 +62,10 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
-  "extensions.ignoreRecommendations": false,
+  "extensions.ignoreRecommendations": true,
   "debug.allowBreakpointsEverywhere": true,
   "git.suggestSmartCommit": false,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.win32": "D:\\Neovim\\bin\\nvim.exe",
 }
 
