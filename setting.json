@@ -42,8 +42,8 @@
   "task.problemMatchers.neverPrompt": {
     "shell": true
   },
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust"
   },
