@@ -52,12 +52,12 @@
   {
     "key": "alt+b",
     "command": "editor.debug.action.toggleBreakpoint",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "alt+ctrl+b",
     "command": "editor.debug.action.conditionalBreakpoint",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "ctrl+'",
@@ -154,127 +154,77 @@
     "command": "workbench.action.terminal.new",
     "when": "terminalFocus"
   },
+  // close
+  {
+    "key": "ctrl+shift+x",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "editorTextFocus && neovim.mode != insert"
+  },
   // navigation
-  {
-    "key": ";",
-    "command": "editor.action.revealDefinition",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": ",",
-    "command": "workbench.action.navigateBack",
-  },
   {
     "key": "alt+r",
     "command": "editor.action.goToReferences",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "alt+shift+,",
-    "command": "workbench.action.navigateToLastEditLocation",
+    "command": "workbench.action.navigateToLastEditLocation"
   },
   {
     "key": "alt+,",
-    "command": "workbench.action.navigateBack",
+    "command": "workbench.action.navigateBack"
   },
   {
     "key": "alt+.",
-    "command": "workbench.action.navigateForward",
+    "command": "workbench.action.navigateForward"
   },
   // timeline
   {
     "key": "alt+t",
     "command": "timeline.focus",
-    "when": "editorTextFocus && neovim.mode != 'insert'",
+    "when": "editorTextFocus && neovim.mode != 'insert'"
   },
   {
     "key": "shift+alt+t",
     "command": "timeline.toggleFollowActiveEditor",
-    "when": "editorTextFocus && neovim.mode != 'insert'",
+    "when": "editorTextFocus && neovim.mode != 'insert'"
   },
   // error & fix
   {
-    "key": "f",
-    "command": "editor.action.quickFix",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
     "key": "shift+f",
     "command": "editor.action.autoFix",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "alt+n",
     "command": "editor.action.marker.nextInFiles",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "alt+shift+n",
     "command": "editor.action.marker.prevInFiles",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "ctrl+.",
     "command": "-editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
   },
-  // close
-  {
-    "key": "x",
-    "command": "workbench.action.closeActiveEditor",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": "shift+x",
-    "command": "workbench.action.reopenClosedEditor",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": "ctrl+x",
-    "command": "workbench.action.closeAllEditors",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": "ctrl+shift+x",
-    "command": "workbench.action.closeOtherEditors",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  // tab 
-  {
-    "key": "]",
-    "command": "workbench.action.nextEditor",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": "[",
-    "command": "workbench.action.previousEditor",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": "shift+]",
-    "command": "workbench.action.moveEditorRightInGroup",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
-  {
-    "key": "shift+[",
-    "command": "workbench.action.moveEditorLeftInGroup",
-    "when": "editorTextFocus && neovim.mode != insert",
-  },
   // split editor
   {
-    "key": "ctrl+v",
+    "key": "ctrl+;",
     "command": "workbench.action.splitEditorRight",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "ctrl+h",
     "command": "workbench.action.focusLeftGroup",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.focusRightGroup",
-    "when": "editorTextFocus && neovim.mode != insert",
+    "when": "editorTextFocus && neovim.mode != insert"
   },
   {
     "key": "ctrl+\\",
@@ -391,5 +341,6 @@
   {
     "key": "ctrl+e",
     "command": "workbench.action.focusActiveEditorGroup"
-  },
+  }
 ]
+
