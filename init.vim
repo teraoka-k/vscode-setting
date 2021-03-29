@@ -10,15 +10,17 @@ call plug#begin()
 call plug#end()
 
 map s <Plug>(easymotion-s2)
-nnoremap j gj
-nnoremap k gk
+nmap j gj
+nmap k gk
 
 "vscode keybindings
 if exists('g:vscode')
+
   "close
   nnoremap x :call VSCodeNotify("workbench.action.closeActiveEditor")<CR>
   nnoremap X :call VSCodeNotify("workbench.action.reopenClosedEditor")<CR>
   nnoremap <c-x> :call VSCodeNotify("workbench.action.closeAllEditors")<CR>
+
   "tab
   nmap ]% <Nop>
   nmap [% <Nop>
@@ -26,8 +28,10 @@ if exists('g:vscode')
   nnoremap <nowait> [ :call VSCodeNotify("workbench.action.previousEditor")<CR>
   nnoremap <c-]> :call VSCodeNotify("workbench.action.moveEditorRightInGroup")<CR>
   nnoremap <c-[> :call VSCodeNotify("workbench.action.moveEditorLeftInGroup")<CR>
+  
   "navigation
   nnoremap ; :call VSCodeNotify("editor.action.revealDefinition")<CR>
   nnoremap , :call VSCodeNotify("workbench.action.navigateBack")<CR>
+
   "fix error
   nnoremap f :call VSCodeNotify("editor.action.quickFix")<CR>
