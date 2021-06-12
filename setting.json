@@ -14,7 +14,6 @@
   "zenMode.hideTabs": false,
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
-  "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editor.enablePreview": false,
@@ -24,7 +23,7 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#16dada",
     "editorWarning.foreground": "#59b4ff",
-    "editorError.foreground": "#ffe659",
+    "editorError.foreground": "#ffe659"
   },
   "arduino.path": "/home/teraoka/Downloads/arduino-1.8.12",
   "arduino.commandPath": "arduino",
@@ -32,7 +31,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.hover.delay": 0,
   "editor.quickSuggestionsDelay": 0,
-  "files.autoSave": "afterDelay",
   "eslint.format.enable": true,
   "workbench.tree.renderIndentGuides": "always",
   "prettier.embeddedLanguageFormatting": "off",
@@ -42,30 +40,35 @@
   "task.problemMatchers.neverPrompt": {
     "shell": true
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.formatOnType": false,
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-  },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "extensions.ignoreRecommendations": true,
+  "extensions.ignoreRecommendations": false,
   "debug.allowBreakpointsEverywhere": true,
   "git.suggestSmartCommit": false,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimExecutablePaths.win32": "D:\\Neovim\\bin\\nvim.exe",
+  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "git-autoconfig.configList": [
+    {},
+    {
+      "user.email": "seimei.221.921@gmail.com",
+      "user.name": "sm921"
+    },
+    {
+      "user.email": "teraoka.kennosuke@gmail.com",
+      "user.name": "teraoka-k"
+    }
+  ],
+  "window.zoomLevel": 1
 }
-
