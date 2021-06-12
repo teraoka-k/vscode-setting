@@ -125,7 +125,7 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+v",
+    "key": "ctrl+,",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus"
   },
@@ -192,7 +192,7 @@
   // error & fix
   {
     "key": "shift+f",
-    "command": "editor.action.autoFix",
+    "command": "editor.action.quickFix",
     "when": "editorTextFocus && neovim.mode != insert"
   },
   {
@@ -212,7 +212,7 @@
   },
   // split editor
   {
-    "key": "ctrl+;",
+    "key": "ctrl+,",
     "command": "workbench.action.splitEditorRight",
     "when": "editorTextFocus && neovim.mode != insert"
   },
@@ -341,6 +341,12 @@
   {
     "key": "ctrl+e",
     "command": "workbench.action.focusActiveEditorGroup"
+  },
+  // for rust
+  // insert triple slash for doc comment automatically
+  {
+    "key": "Enter",
+    "command": "rust-analyzer.onEnter",
+    "when": "editorTextFocus && !suggestWidgetVisible && editorLangId == rust"
   }
 ]
-
