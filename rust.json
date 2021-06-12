@@ -1,0 +1,32 @@
+{
+	"self": {
+		"prefix": "sl",
+		"body": [
+			"self",
+		],
+		"description": "Write self"
+	},
+	"tests": {
+		"prefix": "ts",
+		"body": [
+			"#[cfg(test)]",
+			"mod tests {",
+			"\t#[test]",
+			"\tfn ${1:what}() {",
+			"\t\t${0}",
+			"\t}",
+			"}",
+		],
+		"description": "Write tests"
+	},
+	"test": {
+		"prefix": "tm",
+		"body": [
+			"#[test]",
+			"fn test_${1:what}() {",
+			"\t${0}",
+			"}",
+		],
+		"description": "Write tests more"
+	}
+}
