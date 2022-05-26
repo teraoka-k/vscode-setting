@@ -8,7 +8,13 @@ call plug#begin()
   endif
 call plug#end()
 
-map s <Plug>(easymotion-s2)
+let mapleader = " "
+
+let g:EasyMotion_smartcase = 1
+map s <Plug>(easymotion-s)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 nmap j gj
 nmap k gk
 
