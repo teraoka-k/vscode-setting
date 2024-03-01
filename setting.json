@@ -1,11 +1,8 @@
 {
   "explorer.confirmDelete": false,
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.activityBar.visible": false,
-  "workbench.statusBar.visible": true,
   "window.menuBarVisibility": "hidden",
   "workbench.editor.showTabs": true,
-  "editor.minimap.enabled": false,
   "editor.folding": true,
   "editor.glyphMargin": true,
   "update.mode": "none",
@@ -14,17 +11,15 @@
   "zenMode.hideTabs": false,
   "zenMode.hideStatusBar": false,
   "zenMode.restore": true,
-  "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editor.enablePreview": false,
   "editor.lineNumbers": "off",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
-    "statusBar.background": "#16dada",
-    "editorWarning.foreground": "#59b4ff",
-    "editorError.foreground": "#ffe659",
+    "statusBar.background": "#0190a3",
+    "editorWarning.foreground": "#eeff00",
+    "editorError.foreground": "#ff0000",
   },
   "arduino.path": "/home/teraoka/Downloads/arduino-1.8.12",
   "arduino.commandPath": "arduino",
@@ -33,7 +28,6 @@
   "editor.hover.delay": 0,
   "editor.quickSuggestionsDelay": 0,
   "files.autoSave": "afterDelay",
-  "eslint.format.enable": true,
   "workbench.tree.renderIndentGuides": "always",
   "prettier.embeddedLanguageFormatting": "off",
   "C_Cpp.updateChannel": "Insiders",
@@ -42,30 +36,205 @@
   "task.problemMatchers.neverPrompt": {
     "shell": true
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
   "editor.formatOnType": false,
-  "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust"
+  "editor.formatOnPaste": false,
+  "vs-code-prettier-eslint.prettierLast": false, // set as "true" to run 'prettier' last not first
+  "[vue]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    //"editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    //"editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
   },
   "extensions.ignoreRecommendations": true,
   "debug.allowBreakpointsEverywhere": true,
   "git.suggestSmartCommit": false,
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
   "vscode-neovim.neovimExecutablePaths.win32": "D:\\Neovim\\bin\\nvim.exe",
+  "security.workspace.trust.untrustedFiles": "open",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "betterSnippets.customSnippets": [
+    {
+      "name": "s",
+      "body": "self.",
+      "when": {
+        "languages": [
+          "python"
+        ],
+      },
+      "sortText": "!1"
+    },
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.packageIndexDepths": [
+    {
+      "name": "kivy",
+      "depth": 10,
+      "includeAllSymbols": true
+    },
+    {
+      "name": "ctrader_open_api",
+      "depth": 10,
+      "includeAllSymbols": true
+    },
+    {
+      "name": "twisted",
+      "depth": 10,
+      "includeAllSymbols": true
+    },
+    // ignore the following modules
+    {
+      "name": "tkinter",
+      "depth": 0
+    },
+    {
+      "name": "ast",
+      "depth": 0
+    },
+    {
+      "name": "importlib.metadata",
+      "depth": 0
+    },
+    {
+      "name": "pkg_resources",
+      "depth": 0
+    },
+    {
+      "name": "setuptools",
+      "depth": 0
+    },
+    {
+      "name": "turtle",
+      "depth": 0
+    },
+    {
+      "name": "test",
+      "depth": 0
+    }
+  ],
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  // "vscode-neovim.neovimInitVimPaths.darwin": "~/nvim/bin/nvim",
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "name": "kawase",
+      "driver": "SQLite",
+      "database": "./db/kawase.db",
+      "connectionTimeout": 15
+    },
+  ],
+  "window.title": "${activeEditorLong}",
+  "editor.minimap.enabled": false,
+  "macros": {
+    "lazygit": [
+      "workbench.action.terminal.new",
+      "workbench.action.terminal.moveToEditor",
+      "workbench.action.closePanel",
+      {
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "lazygit\u000D"
+        }
+      }
+    ],
+    "vim-help": [
+      "workbench.action.terminal.new",
+      "workbench.action.terminal.moveToEditor",
+      "workbench.action.closePanel",
+      {
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "nvim -c help \u000D"
+        }
+      },
+    ],
+    "init.lua": [
+      "workbench.action.terminal.new",
+      "workbench.action.closePanel",
+      {
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+          "text": "code ~/.config/nvim/init.lua\u000D"
+        }
+      },
+    ],
+  },
+  "sqltools.disableNodeDetectNotifications": true,
+  "git.openRepositoryInParentFolders": "always",
+  "terminal.external.osxExec": "kitty.app",
+  "terminal.integrated.confirmOnKill": "never",
+  "terminal.integrated.cursorBlinking": true,
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "workbench.editor.enablePreviewFromCodeNavigation": true,
+  "workbench.activityBar.visible": false,
+  "terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "strings": "on"
+  },
+  "editor.snippetSuggestions": "bottom",
+  "python.analysis.autoFormatStrings": true,
+  "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.createOnPublishBranch": "never",
+  "search.exclude": {
+    "**/node_modules": false,
+    "**/node_modules/[!@style-port]": true
+  },
+  "cSpell.userWords": [
+    "ctrader",
+    "Downsample",
+    "forex",
+    "Frenet",
+    "glsl",
+    "GLTF",
+    "helvetiker",
+    "kivy",
+    "lazygit",
+    "lerp",
+    "Mipmaps",
+    "neovim",
+    "permutated",
+    "Phong",
+    "Raycast",
+    "raycaster",
+    "roov",
+    "ROWID",
+    "Selectability",
+    "selectandstart",
+    "sqltools",
+    "SSAO",
+    "timespan",
+    "Toon",
+    "unhighlight",
+    "unnormalize",
+    "upsampled",
+    "USSPX",
+    "vimmers"
+  ],
+  "C_Cpp.default.cppStandard": "c++23",
+  "C_Cpp.default.cStandard": "c23",
+  "window.zoomLevel": 1,
 }
-

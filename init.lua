@@ -53,6 +53,8 @@ local packages = {
 }
 
 if vim.g.vscode then
+	vim.cmd("nmap j gj")
+	vim.cmd("nmap k gk")
 else
 	for _, package in ipairs({
 		-- smooth scroll
